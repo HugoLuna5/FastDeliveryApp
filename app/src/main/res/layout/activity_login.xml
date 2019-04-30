@@ -59,7 +59,7 @@
             android:inputType="phone"
             android:phoneNumber="true"
             android:textAlignment="textStart"
-            android:textColor="#ffffff"
+            android:textColor="#000"
             android:textColorHint="#000"
             android:textSize="18.4sp" />
 

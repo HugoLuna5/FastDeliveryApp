@@ -11,14 +11,5 @@
         android:orderInCategory="2"
         app:showAsAction="ifRoom"
         android:icon="@android:drawable/ic_menu_mylocation"/>
-    <item android:id="@+id/action_taxi"
-        android:title="Taxi"
-        android:orderInCategory="3"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_local_taxi_black_24dp"/>
-    <item android:id="@+id/action_change_colors"
-        android:title="Invertir"
-        android:orderInCategory="4"
-        app:showAsAction="ifRoom"
-        android:icon="@drawable/ic_invert_colors_black_24dp"/>
+
 </menu>

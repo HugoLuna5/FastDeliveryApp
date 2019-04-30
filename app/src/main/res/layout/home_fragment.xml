@@ -1,62 +1,103 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:fitsSystemWindows="true">
 
 
-    <android.support.v4.widget.NestedScrollView
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_below="@+id/app_bar"
+        >
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:padding="24dp"></LinearLayout>
+            android:padding="5dp"
+            android:orientation="vertical">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/containerPromo">
 
-    </android.support.v4.widget.NestedScrollView>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Tendencia esta semana"
+                    android:textStyle="bold"
+                    android:textSize="18sp"
+                    android:id="@+id/textPromo"/>
+
+                <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:msrv_gravity="center"
+                    app:msrv_ms_per_inch="@dimen/normal_speed"
+                    android:id="@+id/recyclerviewPromos"
+                    />
+
+            </LinearLayout>
 
 
-    <android.support.design.widget.AppBarLayout
+            <LinearLayout
+                android:layout_below="@id/containerPromo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:id="@+id/containerCombo">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:text="Más popular"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:id="@+id/textCombo"/>
+
+                <com.takusemba.multisnaprecyclerview.MultiSnapRecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:msrv_gravity="start"
+                    app:msrv_ms_per_inch="@dimen/normal_speed"
+                    android:id="@+id/recyclerviewCombos"
+                    />
+
+            </LinearLayout>
+        </RelativeLayout>
+
+
+
+
+
+
+    </androidx.core.widget.NestedScrollView>
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
         android:layout_width="match_parent"
-        android:layout_height="140dp"
-        android:fitsSystemWindows="true"
+        android:layout_height="?android:attr/actionBarSize"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
 
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginBottom="10dp"
+            android:background="@android:color/transparent"
+            android:fitsSystemWindows="true"
+            app:layout_collapseMode="pin"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+            app:title="Fast"
+            app:titleTextColor="@android:color/white" />
 
-            <android.support.v7.widget.Toolbar
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="?attr/actionBarSize"
-                android:background="@android:color/transparent"
-                android:fitsSystemWindows="true"
-                app:layout_collapseMode="pin"
-                app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:title="Fast"
-                app:titleTextColor="@android:color/white"
-                android:layout_marginBottom="10dp"
-                />
+    </com.google.android.material.appbar.AppBarLayout>
 
-            <com.arlib.floatingsearchview.FloatingSearchView
-                android:id="@+id/floating_search_view"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                app:floatingSearch_close_search_on_keyboard_dismiss="true"
-                app:floatingSearch_leftActionMode="showHamburger"
-                app:floatingSearch_menu="@menu/menu_main"
-                app:floatingSearch_searchBarMarginLeft="@dimen/search_view_inset"
-                app:floatingSearch_searchBarMarginRight="@dimen/search_view_inset"
-                app:floatingSearch_searchHint="Buscar..."
-                app:floatingSearch_showSearchKey="false"
-                app:floatingSearch_suggestionsListAnimDuration="250">
-
-            </com.arlib.floatingsearchview.FloatingSearchView>
-
-
-
-    </android.support.design.widget.AppBarLayout>
-
-</android.support.design.widget.CoordinatorLayout>
+</RelativeLayout>

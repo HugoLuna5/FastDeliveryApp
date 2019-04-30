@@ -1,14 +1,17 @@
 package lunainc.com.mx.fastdelivery.UI.Activity;
 
 import android.os.Bundle;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v7.app.AppCompatActivity;
-import android.support.annotation.NonNull;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.annotation.NonNull;
 import android.view.MenuItem;
 import android.widget.TextView;
 
+import androidx.fragment.app.FragmentTransaction;
+
 import com.mx.lunainc.fastdelivery.R;
 
+import lunainc.com.mx.fastdelivery.UI.Fragment.DescubreFragment;
 import lunainc.com.mx.fastdelivery.UI.Fragment.HomeFragment;
 
 public class HomeActivity extends AppCompatActivity {
@@ -23,16 +26,23 @@ public class HomeActivity extends AppCompatActivity {
             /*
 
              */
+            FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
                 case R.id.home:
                     HomeFragment fragment = new HomeFragment();
-                    android.support.v4.app.FragmentTransaction fragmentTransaction =
-                            getSupportFragmentManager().beginTransaction();
                     fragmentTransaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
                     fragmentTransaction.replace(R.id.container, fragment);
                     fragmentTransaction.commit();
                     return true;
                 case R.id.explore:
+
+                    DescubreFragment descubreFragment = new DescubreFragment();
+                    fragmentTransaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_from_left);
+                    fragmentTransaction.replace(R.id.container, descubreFragment);
+                    fragmentTransaction.commit();
+
+
                     return true;
                 case R.id.cart:
                     return true;
@@ -40,8 +50,13 @@ public class HomeActivity extends AppCompatActivity {
                     return true;
                 case R.id.profile:
                     return true;
+                default:
+                    HomeFragment defaultF = new HomeFragment();
+                    fragmentTransaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+                    fragmentTransaction.replace(R.id.container, defaultF);
+                    fragmentTransaction.commit();
+                    return true;
             }
-            return false;
         }
     };
 
@@ -51,6 +66,8 @@ public class HomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         BottomNavigationView navView = findViewById(R.id.bottomBar);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+        navView.setSelectedItemId(R.id.home);
+
     }
 
 }
