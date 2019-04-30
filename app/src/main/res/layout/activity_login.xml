@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="128dp"
+            android:layout_marginLeft="36.7dp"
+            android:orientation="horizontal">
+
+            <lunainc.com.mx.fastdelivery.customfonts.MyTextView_Roboto_Bold
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fast Delivery"
+                android:textSize="31sp"
+                android:textColor="#ffffff"/>
+            <View
+                android:layout_width="1dp"
+                android:layout_marginTop="5dp"
+                android:layout_height="34dp"
+                android:layout_marginLeft="9.2dp"
+                android:background="#ffffff"/>
+
+            <lunainc.com.mx.fastdelivery.customfonts.MyTextView_Roboto_Regular
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="App"
+                android:layout_marginLeft="8.5dp"
+                android:textSize="20sp"
+                android:textColor="#f05421"/>
+        </LinearLayout>
+
+
+        <lunainc.com.mx.fastdelivery.customfonts.EditText_Roboto_Regular
+            android:id="@+id/phoneNumber"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34.6dp"
+            android:layout_marginTop="154.7dp"
+            android:layout_marginRight="33.6dp"
+            android:background="@drawable/rounded"
+            android:hint="Telefono"
+            android:drawableStart="@drawable/ic_phone"
+            android:padding="12dp"
+            android:inputType="phone"
+            android:phoneNumber="true"
+            android:textAlignment="textStart"
+            android:textColor="#ffffff"
+            android:textColorHint="#000"
+            android:textSize="18.4sp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="3dp"
+            android:layout_marginLeft="34.6dp"
+            android:layout_marginTop="6.5dp"
+            android:layout_marginRight="33.6dp"
+            android:background="#33ffffff" />
+
+
+        <lunainc.com.mx.fastdelivery.customfonts.MyTextView_Roboto_Regular
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="34.6dp"
+            android:layout_marginTop="23.8dp"
+            android:layout_marginRight="33.6dp"
+            android:background="@drawable/rectangle"
+            android:gravity="center_horizontal"
+            android:padding="16.4dp"
+            android:text="ENTRAR"
+            android:textColor="#ffffff"
+            android:textSize="13.3sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/Linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="28.1dp"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true">
+
+    </LinearLayout>
+</RelativeLayout>

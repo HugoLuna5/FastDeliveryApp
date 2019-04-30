@@ -1,4 +1,4 @@
-package lunainc.com.mx.fastdelivery.UI;
+package lunainc.com.mx.fastdelivery.UI.Activity;
 
 import android.os.Bundle;
 import android.support.design.widget.BottomNavigationView;
