@@ -9,18 +9,16 @@ import androidx.fragment.app.Fragment;
 
 import com.mx.lunainc.fastdelivery.R;
 
-public class FavoriteFragment extends Fragment {
-
+public class CarritoFragment extends Fragment {
 
     private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        view = inflater.inflate(R.layout.list_fragment, container, false);
+        view = inflater.inflate(R.layout.list_carrito, container, false);
 
 
         return view;
     }
-
 }

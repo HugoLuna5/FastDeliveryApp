@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.mx.lunainc.fastdelivery.R;
 
+import lunainc.com.mx.fastdelivery.UI.Fragment.ContainerCarritoFragment;
 import lunainc.com.mx.fastdelivery.UI.Fragment.DescubreFragment;
 import lunainc.com.mx.fastdelivery.UI.Fragment.FavoriteFragment;
 import lunainc.com.mx.fastdelivery.UI.Fragment.HomeFragment;
@@ -46,6 +47,9 @@ public class HomeActivity extends AppCompatActivity {
 
                     return true;
                 case R.id.cart:
+                    ContainerCarritoFragment containerCarritoFragment = new ContainerCarritoFragment();
+                    fragmentTransaction.replace(R.id.container, containerCarritoFragment);
+                    fragmentTransaction.commit();
                     return true;
                 case R.id.favorite:
 
