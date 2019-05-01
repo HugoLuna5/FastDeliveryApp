@@ -13,9 +13,30 @@
         android:layout_below="@+id/app_bar"
         >
 
-       <LinearLayout
+       <RelativeLayout
            android:layout_width="match_parent"
-           android:layout_height="match_parent"></LinearLayout>
+           android:layout_height="match_parent"
+           android:orientation="vertical">
+
+           <lunainc.com.mx.fastdelivery.customfonts.MyTextView_Montserrat_Regular
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:text="Categorias Principales"
+               android:textStyle="bold"
+               android:textSize="20sp"
+               android:padding="15dp"
+               android:textColor="#646262"
+               android:id="@+id/titleDescubre"/>
+           <androidx.recyclerview.widget.RecyclerView
+               android:layout_below="@+id/titleDescubre"
+               android:layout_width="match_parent"
+               android:layout_height="match_parent"
+               android:paddingLeft="10dp"
+               android:paddingTop="11dp"
+               android:id="@+id/recyclerView"/>
+
+
+       </RelativeLayout>
 
 
 
@@ -49,12 +70,12 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:floatingSearch_close_search_on_keyboard_dismiss="true"
-            app:floatingSearch_leftActionMode="showHamburger"
+            app:floatingSearch_leftActionMode="showSearch"
             app:floatingSearch_menu="@menu/menu_main"
             app:floatingSearch_searchBarMarginLeft="@dimen/search_view_inset"
             app:floatingSearch_searchBarMarginRight="@dimen/search_view_inset"
             app:floatingSearch_searchHint="Buscar..."
-            app:floatingSearch_showSearchKey="false"
+            app:floatingSearch_showSearchKey="true"
             app:floatingSearch_suggestionsListAnimDuration="250">
 
         </com.arlib.floatingsearchview.FloatingSearchView>

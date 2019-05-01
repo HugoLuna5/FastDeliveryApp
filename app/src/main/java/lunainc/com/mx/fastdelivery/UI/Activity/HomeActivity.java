@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentTransaction;
 import com.mx.lunainc.fastdelivery.R;
 
 import lunainc.com.mx.fastdelivery.UI.Fragment.DescubreFragment;
+import lunainc.com.mx.fastdelivery.UI.Fragment.FavoriteFragment;
 import lunainc.com.mx.fastdelivery.UI.Fragment.HomeFragment;
 
 public class HomeActivity extends AppCompatActivity {
@@ -28,17 +29,17 @@ public class HomeActivity extends AppCompatActivity {
              */
             FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
+
             switch (item.getItemId()) {
                 case R.id.home:
                     HomeFragment fragment = new HomeFragment();
-                    fragmentTransaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
                     fragmentTransaction.replace(R.id.container, fragment);
                     fragmentTransaction.commit();
                     return true;
                 case R.id.explore:
 
                     DescubreFragment descubreFragment = new DescubreFragment();
-                    fragmentTransaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_from_left);
                     fragmentTransaction.replace(R.id.container, descubreFragment);
                     fragmentTransaction.commit();
 
@@ -47,12 +48,16 @@ public class HomeActivity extends AppCompatActivity {
                 case R.id.cart:
                     return true;
                 case R.id.favorite:
+
+                    FavoriteFragment favoriteFragment = new FavoriteFragment();
+                    fragmentTransaction.replace(R.id.container,  favoriteFragment);
+                    fragmentTransaction.commit();
+
                     return true;
                 case R.id.profile:
                     return true;
                 default:
                     HomeFragment defaultF = new HomeFragment();
-                    fragmentTransaction.setCustomAnimations(R.anim.slide_from_right, R.anim.slide_to_left);
                     fragmentTransaction.replace(R.id.container, defaultF);
                     fragmentTransaction.commit();
                     return true;

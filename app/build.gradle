@@ -19,6 +19,11 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
@@ -63,6 +68,12 @@ dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.cepheuen.elegant-number-button:lib:1.0.2'
     implementation 'com.chaos.view:pinview:1.4.3'
+
+    implementation 'com.jakewharton:butterknife:10.1.0'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.1.0'
+
+    implementation 'me.relex:circleindicator:1.2.2@aar'
+
 
 
     implementation 'com.github.takusemba:multisnaprecyclerview:1.3.4'
